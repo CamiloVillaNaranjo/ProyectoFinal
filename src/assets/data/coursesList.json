@@ -1,0 +1,30 @@
+[
+    {
+        "id":"1",
+        "name":"Angular 2",
+        "startdate":"01/01/2017",
+        "duration":"32",
+        "taughtby":"9"
+    },
+    {
+        "id":"2",
+        "name":"Ionic 2",
+        "startdate":"01/12/2016",
+        "duration":"20",
+        "taughtby":"2"
+    },
+    {
+        "id":"3",
+        "name":"Test Automation",
+        "startdate":"01/05/2016",
+        "duration":"30",
+        "taughtby":"7"
+    },
+    {
+        "id":"4",
+        "name":"Machine Learning",
+        "startdate":"15/05/2017",
+        "duration":"45",
+        "taughtby":"6"
+    }
+]
