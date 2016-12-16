@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DataTableModule } from 'angular2-datatable';
-
+import { Component, OnInit, Pipe } from '@angular/core';
 import { TeacherService } from './../../core/shared/service.teachers';
 import { Teacher } from './../models/class.teachers';
-import { DataFilterPipe } from './../../core/pipe.data-filter';
 
 
 @Component({
