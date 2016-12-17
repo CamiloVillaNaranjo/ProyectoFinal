@@ -1,19 +1,15 @@
+import { Subject, Observable } from 'rxjs/Rx';
 import { Teacher } from './../../core/models/class.teachers';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
 export class TeacherService {
-    arrayTeachers: Teacher[];
+
     constructor(private http: Http) {}
 
-    getCourseList(): Teacher[] {
-        this.http.get('./assets/data/teachersList.json')
-            .subscribe((data) => {
-                setTimeout(() => {
-                    this.arrayTeachers = data.json();
-                }, 1000);
-            });
-            return this.arrayTeachers;
+    getAll(): Observable<Teacher[]> {
+        return this.http.get('./assets/data/teachersList.json')
+            .map((r: Response) => r.json() as Teacher[]);
     }
 }

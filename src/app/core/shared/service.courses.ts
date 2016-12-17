@@ -1,20 +1,17 @@
+import { Subject, Observable } from 'rxjs/Rx';
 import { Course } from './../models/class.courses';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
 export class CourseService {
-    arrayCurses: Course[];
+
+    course: Course[];
+
     constructor(private http: Http) {}
 
-    getCourseList(): Course[] {
-        this.http.get('./assets/data/coursesList.json')
-            .subscribe((data) => {
-                setTimeout(() => {
-                    this.arrayCurses = data.json();
-                }, 1000);
-            });
-            return this.arrayCurses;
+    getAll(): Observable<Course[]> {
+        return this.http.get('./assets/data/coursesList.json')
+        .map((r: Response) => r.json() as Course[]);
     }
-// tslint:disable-next-line:eofline
 }

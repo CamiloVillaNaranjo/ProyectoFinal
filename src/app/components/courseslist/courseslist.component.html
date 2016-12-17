@@ -1,3 +1,52 @@
-<p>
-  courseslist works!
-</p>
+<h1>Yuxi Courses</h1>
+<div class="row">
+  <div class="col-md-10" style="height: 460px;">
+    <table class="table table-striped" [mfData]="data" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+        <thead>
+          <tr>
+            <th style="width: 10%"></th>
+            <th style="width: 20%">
+              <mfDefaultSorter by="name">Name</mfDefaultSorter>
+            </th>
+            <th style="width: 40%">
+              <mfDefaultSorter by="duration">Hours</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="startdate">Start Date</mfDefaultSorter>
+            </th>
+          </tr>
+          <tr>
+            <th colspan="4">
+              Filter by name:
+              <input class="form-control" [(ngModel)]="filterQuery" />
+            </th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mf.data">
+          <td>
+            <button (click)="remove(item)" class="btn btn-danger">x</button>
+          </td>
+          <td><a [routerLink]="['/Courses', item.courseid]">{{item.name}}</a></td>
+          <td>{{item.duration}} h</td>
+          <td>{{item.startdate}} 
+            <!-- <span class="btn" [ngClass]="{'btn-info btn-circle': IsDate(item.startdate),
+              'btn-warning btn-circle': IsDate(item.startdate)}"></span>-->
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="col-md-2">
+    <img src="./assets/imgs/courseList.png">
+  </div>
+</div>
+{{data | json}}
