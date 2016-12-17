@@ -1,6 +1,6 @@
+import { Teacher } from './../../core/models/class.teachers';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Teacher } from './../../components/models/class.teachers';
 
 @Injectable()
 export class TeacherService {
@@ -16,5 +16,4 @@ export class TeacherService {
             });
             return this.arrayTeachers;
     }
-// tslint:disable-next-line:eofline
 }
