@@ -28,11 +28,12 @@
           <td>
             <button (click)="remove(item)" class="btn btn-danger">x</button>
           </td>
-          <td><a [routerLink]="['/Courses', item.courseid]">{{item.name}}</a></td>
+          <td><a [routerLink]="['/Courses', item.id]">{{item.name}}</a></td>
           <td>{{item.duration}} h</td>
           <td>{{item.startdate}} 
-            <!-- <span class="btn" [ngClass]="{'btn-info btn-circle': IsDate(item.startdate),
-              'btn-warning btn-circle': IsDate(item.startdate)}"></span>-->
+            <!-- <span class="btn" [ngClass]="{'btn-info btn-circle': ValidateDateRange(item.startdate)==='info',
+              'btn-warning btn-circle': ValidateDateRange(item.startdate)==='warning',
+              'btn-danger btn-circle': ValidateDateRange(item.startdate)==='danger'}"></span>-->
           </td>
         </tr>
       </tbody>
@@ -49,4 +50,3 @@
     <img src="./assets/imgs/courseList.png">
   </div>
 </div>
-{{data | json}}

@@ -1,7 +1,7 @@
-export class Teacher{
+export class Teacher {
     constructor(
-        private teacherId: number,
-        private teacherName: string,
-        private teacherLastname: string
+        public teacherId: number,
+        public teacherName: string,
+        public teacherLastname: string
     ) {}
 }
