@@ -1,6 +1,7 @@
+import { Course } from './../models/class.courses';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Course } from './../../components/models/class.courses';
+
 @Injectable()
 export class CourseService {
     arrayCurses: Course[];
