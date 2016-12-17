@@ -1,52 +1,10 @@
-[
-    {
-        "id":"1",
-        "name":"Camilo Alfonso",
-        "lastname":"Villa Naranjo"
-    },
-    {
-        "id":"2",
-        "name":"Juan David",
-        "lastname":"Nicholls"
-    },
-    {
-        "id":"3",
-        "name":"Catalina",
-        "lastname":"Lopez Lopez"
-    },
-    {
-        "id":"4",
-        "name":"Camilo",
-        "lastname":"Loaiza"
-    },
-    {
-        "id":"5",
-        "name":"Jorge",
-        "lastname":"Ripol"
-    },
-    {
-        "id":"6",
-        "name":"Fabian",
-        "lastname":"Buitrago"
-    },
-    {
-        "id":"7",
-        "name":"Wilson",
-        "lastname":"Espinosa"
-    },
-    {
-        "id":"8",
-        "name":"Carlos",
-        "lastname":"Campillo"
-    },
-    {
-        "id":"9",
-        "name":"Luis",
-        "lastname":"Bedoya"
-    },
-    {
-        "id":"10",
-        "name":"Carlos",
-        "lastname":"Naranjo Rojas"
-    }
-]
+[{"teacherid":"1","teachername":"Camilo Alfonso","teacherlastname":"Villa Naranjo"},
+{"teacherid":"2","teachername":"Juan David","teacherlastname":"Nicholls"},
+{"teacherid":"3","teachername":"Catalina","teacherlastname":"Lopez Lopez"},
+{"teacherid":"4","teachername":"Camilo","teacherlastname":"Loaiza"},
+{"teacherid":"5","teachername":"Jorge","teacherlastname":"Ripol"},
+{"teacherid":"6","teachername":"Fabian","teacherlastname":"Buitrago"},
+{"teacherid":"7","teachername":"Wilson","teacherlastname":"Espinosa"},
+{"teacherid":"8","teachername":"Carlos","teacherlastname":"Campillo"},
+{"teacherid":"9","teachername":"Luis","teacherlastname":"Bedoya"},
+{"teacherid":"10","teachername":"Carlos","teacherlastname":"Naranjo Rojas"}]
