@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <label for="inputTeacherName">Teacher Name</label>
+    <input type="text" class="form-control" id="inputTeacherName" placeholder="Teacher Name" [value]="teacher.teacherName">
+  </div>
+  <div class="form-group">
+    <label for="inputTeacherLastName">Last Name</label>
+    <input type="text" class="form-control" id="inputTeacherLastName" placeholder="Teacher Last Name" [value]="teacher.teacherLastname">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Save</button><button type="reset" class="btn btn-default">Cancel</button>
+  </div>
+</form>
+{{teacher | json}}

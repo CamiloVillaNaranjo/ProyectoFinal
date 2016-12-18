@@ -1,4 +1,6 @@
-import { TeacherService } from './../../core/shared/service.teachers';
+import { Teacher } from './../../shared/models/class.teachers';
+import { TeacherService } from './../../core/providers/service.teachers';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,8 +19,8 @@ export class TeacherslistComponent implements OnInit {
   constructor(private teacherService: TeacherService) { }
 
   ngOnInit() {
-    this.teacherService.getAll()
-        .subscribe((list) => this.data = list);
+    this.data = this.teacherService.getAll();
+        ///.subscribe((list) => this.data = list);
   }
 
   public toInt(num: string) {

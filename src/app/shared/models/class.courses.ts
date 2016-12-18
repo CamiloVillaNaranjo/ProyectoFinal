@@ -1,9 +1,9 @@
-export class Course{
+export class Course {
     constructor(
-        public id: number,
+        public courseId: number,
         public courseName: string,
         public startDate: Date,
         public duration: number,
-        public taughBy: string
-    ){}
+        public taughtBy: number
+    ) {}
 }

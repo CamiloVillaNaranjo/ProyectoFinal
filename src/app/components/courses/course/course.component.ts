@@ -1,5 +1,5 @@
-import { CourseService } from './../../core/shared/service.courses';
-import { Course } from './../../core/models/class.courses';
+import { Course } from './../../../shared/models/class.courses';
+import { CourseService } from './../../../core/providers/service.courses';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -13,20 +13,21 @@ import { Location } from '@angular/common';
 })
 export class CourseComponent implements OnInit {
 
-  courseElement;
-  courseId;
+  courseElement: Course;
+  courseId: string;
 
   constructor(private route: ActivatedRoute,
               private courseService: CourseService) { }
 
   ngOnInit() {
     this.route.params.forEach((param: Params) =>
-        this.courseId = param['id']);
+        this.courseId = param['id:']);
 
-    this.courseElement = this.courseService.getById(parseInt(this.courseId));
-
-    console.log(this.courseElement);
-    console.log(this.courseId);
+    if (this.courseId !== undefined) {
+      this.courseElement = this.courseService.getById(parseInt(this.courseId));
+    } else {
+      this.courseElement = this.courseService.getById(-1);
+    }
   }
 
 }

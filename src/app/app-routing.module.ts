@@ -1,11 +1,12 @@
-import { TeacherComponent } from './components/teacher/teacher.component';
-import { TeacherslistComponent } from './components/teacherslist/teacherslist.component';
-import { CourseslistComponent } from './components/courseslist/courseslist.component';
-import { CourseComponent } from './components/course/course.component';
+///Custom Components imported
+import { TeacherslistComponent } from './components/teachers/teacherslist.component';
+import { CourseslistComponent } from './components/courses/courseslist.component';
 import { HomeComponent } from './components/home/home.component';
+import { CourseComponent } from './components/courses/course/course.component';
+import { TeacherComponent } from './components/teachers/teacher/teacher.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 
 const routes: Routes = [

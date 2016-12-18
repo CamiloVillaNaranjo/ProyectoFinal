@@ -11,10 +11,10 @@
           <tr>
             <th style="width: 10%"></th>
             <th style="width: 20%">
-              <mfDefaultSorter by="teachername">Name</mfDefaultSorter>
+              <mfDefaultSorter by="teacherName">Name</mfDefaultSorter>
             </th>
             <th style="width: 40%">
-              <mfDefaultSorter by="teacherlastname">Last Name</mfDefaultSorter>
+              <mfDefaultSorter by="teacherLastname">Last Name</mfDefaultSorter>
             </th>
           </tr>
           <tr>
@@ -29,8 +29,8 @@
           <td>
             <button (click)="remove(item)" class="btn btn-danger">x</button>
           </td>
-          <td>{{item.teachername}}</td>
-          <td>{{item.teacherlastname}}</td>
+          <td> <a [routerLink]="['/Teachers',item.teacherId]">{{item.teacherName}}</a></td>
+          <td>{{item.teacherLastname}}</td>
         </tr>
       </tbody>
       <tfoot>

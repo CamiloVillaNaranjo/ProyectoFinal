@@ -6,7 +6,7 @@ import { DataTableModule } from 'angular2-datatable';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CourseComponent } from './../course/course.component';
+import { CourseComponent } from './course/course.component';
 import { CourseslistComponent } from './courseslist.component';
 
 @NgModule({

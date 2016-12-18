@@ -1,5 +1,5 @@
-import { Course } from './../../core/models/class.courses';
-import { CourseService } from './../../core/shared/service.courses';
+import { Course } from './../../shared/models/class.courses';
+import { CourseService } from './../../core/providers/service.courses';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -18,8 +18,8 @@ export class CourseslistComponent implements OnInit {
   constructor(private coursesService: CourseService) { }
 
   ngOnInit() {
-    this.coursesService.getAll()
-        .subscribe((list) => this.data = list);
+    this.data = this.coursesService.getAll();
+        ///.subscribe((list) => this.data = list);
   }
 
   public toInt(num: string) {
