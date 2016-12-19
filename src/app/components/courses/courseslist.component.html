@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Yuxi Courses</h1>
   <h6>{{currentDate}}</h6>
-  <button type="button" class="btn btn-default" aria-label="Right Align" [routerLink]="['/courses', '-1']">
+  <button type="button" class="btn btn-default" aria-label="Right Align" [routerLink]="['/Courses', '-1']">
       <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> New course
   </button>
   <div class="row">
@@ -36,7 +36,7 @@
             <td><a [routerLink]="['/Courses', item.courseId]">{{item.courseName}}</a></td>
             <td>{{item.duration}} h</td>
             <td>{{item.startDate | date: "yyyy/MM/dd"}} 
-              <span class="badge">&nbsp;</span>
+              <span class="badge" [ngStyle]="{background: validateDates(item.startDate)}">&nbsp;</span>
             </td>
           </tr>
         </tbody>

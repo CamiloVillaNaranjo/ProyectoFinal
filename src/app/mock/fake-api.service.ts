@@ -9,7 +9,7 @@ let courses = [
 { id: 1, courseName: 'Angular 2', startDate: new Date('01/01/2017'), duration: 32, taughtBy: 9 },
 { id: 2, courseName: 'Ionic 2', startDate: new Date('01/12/2016'), duration: 20, taughtBy: 2 },
 { id: 3, courseName: 'Test Automation', startDate: new Date('01/05/2016'), duration: 30, taughtBy: 7 },
-{ id: 4, courseName: 'Machine Learning', startDate: new Date('15/05/2017'), duration: 45, taughtBy: 6 }
+{ id: 4, courseName: 'Machine Learning', startDate: new Date('05/15/2017'), duration: 45, taughtBy: 6 }
 ];
 
 let teachers = [

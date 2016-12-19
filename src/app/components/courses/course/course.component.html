@@ -6,24 +6,22 @@
       <input type="text" 
             class="form-control" 
             id="courseName" 
-            name = "courseName" 
-            placeholder="Angular BootCamp" 
+            name = "courseName"
             [(ngModel)]="course.courseName"
-            required>
+            required #courseName="ngModel">
     </div>
     <div class="form-group">
       <label for="startDate">Starting Date</label>
+      <span class="badge" [ngStyle]="{background: validateDates(course.startDate)}" >&nbsp;</span>
       <input type="date" 
             class="form-control" 
             id="startDate" 
             name="startDate"
-            placeholder="DD/MM/YYYY" 
             [(ngModel)]="course.startDate"
-            required>
+            required #startDate="ngModel">
         <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
           Please select a Starting Date.
         </div>
-        <span class="badge">&nbsp;</span>
     </div>
     <div class="form-group">
       <label for="duration">Duration</label>
@@ -31,7 +29,7 @@
             class="form-control" 
             id="duration" 
             [(ngModel)]="course.duration"
-            required>
+            required #duration="ngModel">
       <div [hidden]="duration.valid || duration.pristine" class="alert alert-danger">
         Please select the course duration.
       </div>
@@ -46,7 +44,7 @@
               id="taughtBy"
               name="taughtBy"
               [(ngModel)]="course.taughtBy"
-              required>
+              required #taughtBy="ngModel">
               <option *ngFor="let teacher of teachers" value="{{teacher.teacherId}}">{{teacher.teacherName}} {{teacher.teacherLastname}}</option>
         </select>
       </div>

@@ -22,7 +22,7 @@ export class TeacherComponent implements OnInit {
     this.route.params.forEach((p: Params) =>
       this.teacherId = p['id:']);
 
-    if (this.teacherId !== undefined) {
+    if (this.teacherId !== '-1') {
       debugger;
       let id = parseInt(this.teacherId, 0);
       this.teacherService.getById(id)

@@ -14,8 +14,10 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent},
   { path: 'Courses', component: CourseslistComponent},
   { path: 'Courses/:id:', component: CourseComponent},
+  { path: 'Courses/-1', component: CourseComponent},
   { path: 'Teachers', component: TeacherslistComponent},
-  { path: 'Teachers/:id:', component: TeacherComponent}
+  { path: 'Teachers/:id:', component: TeacherComponent},
+  { path: 'Teachers/-1', component: TeacherComponent}
 ];
 
 @NgModule({

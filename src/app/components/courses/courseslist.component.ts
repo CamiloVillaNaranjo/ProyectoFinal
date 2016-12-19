@@ -34,4 +34,17 @@ export class CourseslistComponent implements OnInit {
         return a.city.length;
   }
 
+  validateDates(arg: Date): any {
+    let currentDate: Date = new Date();
+    let courseDate: Date = new Date(arg);
+    let diffDays: number = Math.ceil((courseDate.getTime() - currentDate.getTime()) / (1000 * 3600 * 24));
+    if (diffDays > 30) {
+      return 'green';
+    } else if (diffDays < 30 && diffDays > 0) {
+      return 'yellow';
+    } else {
+      return 'red';
+    }
+  }
+
 }

@@ -1,5 +1,5 @@
 <div class="container" *ngIf="teacher">
-  <h1>{{teacher.teacherLastname}}, {{teacher.teacherName}}</h1>
+  <h1>{{teacher.teacherLastname}} {{teacher.teacherName}}</h1>
   <form (ngSubmit)="onSubmit()" #teacherForm="ngForm">
     <div class="form-group">
       <label for="teacherName">Teacher Name</label>
@@ -7,9 +7,8 @@
             class="form-control" 
             id="teacherName"
             name="teacherName"
-            placeholder="Teacher Name" 
             [(ngModel)]="teacher.teacherName"
-            required>
+            required #teacherName="ngModel">
       <div [hidden] = "teacherName.valid || teacherName.pristine">
         Please write a Name.
       </div>
@@ -20,9 +19,8 @@
             class="form-control" 
             id="teacherLastname" 
             name="teacherLastname"
-            placeholder="Teacher Last Name" 
             [(ngModel)]="teacher.teacherLastname"
-            required>
+            required #teacherLastname="ngModel">
       <div [hidden] = "teacherLastname.valid || teacherLastname.pristine">
         Please write a Last Name.
       </div>
