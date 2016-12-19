@@ -21,7 +21,7 @@ export class TeacherService implements ICommonServiceBehavior {
     }
 
     getById(id: number): Observable<Teacher> {
-        if (!id === undefined) {
+        if (id !== undefined) {
             const url = `${this.urlService}/${id}`;
             return this.http.get(url)
                             .map((res: Response) => res.json().data as Teacher);

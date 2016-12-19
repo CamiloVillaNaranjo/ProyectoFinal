@@ -19,8 +19,8 @@ export class TeacherslistComponent implements OnInit {
   constructor(private teacherService: TeacherService) { }
 
   ngOnInit() {
-    this.data = this.teacherService.getAll();
-        ///.subscribe((list) => this.data = list);
+    this.teacherService.getAll()
+        .subscribe((list) => this.data = list);
   }
 
   public toInt(num: string) {

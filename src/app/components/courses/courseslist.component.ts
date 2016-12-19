@@ -1,5 +1,6 @@
 import { Course } from './../../shared/models/class.courses';
 import { CourseService } from './../../core/providers/service.courses';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,17 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseslistComponent implements OnInit {
 
-  public data;
+  public data: Course[];
   public filterQuery = '';
   public rowsOnPage = 5;
-  public sortBy = 'name';
+  public sortBy = 'courseName';
   public sortOrder = 'asc';
+  currenDate: string;
 
   constructor(private coursesService: CourseService) { }
 
   ngOnInit() {
-    this.data = this.coursesService.getAll();
-        ///.subscribe((list) => this.data = list);
+    this.currenDate = new Date().toLocaleDateString();
+    this.coursesService.getAll().subscribe(
+      (courses: Course[]) => this.data = courses
+    );
   }
 
   public toInt(num: string) {

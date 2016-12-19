@@ -10,7 +10,7 @@ import { Http, Response, Headers } from '@angular/http';
 @Injectable()
 export class CourseService implements ICommonServiceBehavior{
 
-    urlService: string = './assets/data/coursesList.json';
+    urlService: string = './api/courses';
     headers: Headers =  new Headers({ 'Content-Type': 'application/json' });
 
     constructor(private http: Http) { }
@@ -21,7 +21,7 @@ export class CourseService implements ICommonServiceBehavior{
     }
 
     getById(id: number): Observable<Course> {
-        if (!id === undefined) {
+        if (id !== undefined) {
             const url = `${this.urlService}/${id}`;
             return this.http.get(url)
                             .map((res: Response) => res.json().data as Course);
@@ -40,8 +40,4 @@ export class CourseService implements ICommonServiceBehavior{
                 .put(url, JSON.stringify(course), { headers: this.headers })
                 .map(() => course);
     }
-
-    ///getByTaught(teacherId: number): Course {
-    ///    return this.COURSES.find((c: Course) => c.taughtBy === teacherId);
-    ///}
 }

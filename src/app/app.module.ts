@@ -10,9 +10,13 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 ///My providers imported
 import { CourseService } from './core/providers/service.courses';
 import { TeacherService } from './core/providers/service.teachers';
+import { YuxiWebApi } from './mock/fake-api.service';
+///My directives imported
+import { MyStartDateStatusDirective } from './components/courses/shared/mystartdatestatus.directive';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { DataTableModule } from 'angular2-datatable';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -23,7 +27,8 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    MyStartDateStatusDirective
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     CourseslistModule,
     TeacherslistModule,
+    InMemoryWebApiModule.forRoot(YuxiWebApi),
     AppRoutingModule
   ],
   providers: [

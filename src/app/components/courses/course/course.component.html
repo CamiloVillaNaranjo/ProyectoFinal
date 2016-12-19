@@ -1,21 +1,65 @@
-<form>
-  <div class="form-group">
-    <label for="inputCourseName">Course Name</label>
-    <input type="text" class="form-control" id="inputCourseName" placeholder="Angular BootCamp" [value]="courseElement.courseName">
-  </div>
-  <div class="form-group">
-    <label for="inputCourseStartDate">Starting Date</label>
-    <input type="text" class="form-control" id="inputCourseStartDate" placeholder="DD/MM/YYYY" [value]="courseElement.startDate">
-  </div>
-  <div class="form-group">
-    <label for="inputCourseDuration">Duration</label>
-    <input type="text" class="form-control" id="inputCourseDuration" [value]="courseElement.duration">
-  </div>
-  <div class="form-group">
-    <label for="inputCourseTeacher">Duration</label>
-    <select id class="form-control" id="inputCourseTeacher"></select>
-  </div>
-  <button type="submit" class="btn btn-primary">Save</button>
-  <button type="reset" class="btn btn-default">Cancel</button>
-</form>
-{{courseElement | json}}
+<div class="container" *ngIf="course">
+  <h1>{{course.courseName}}</h1>
+  <form (ngSubmit) = "onSubmit()" #courseForm="ngForm">
+    <div class="form-group">
+      <label for="courseName">Course Name</label>
+      <input type="text" 
+            class="form-control" 
+            id="courseName" 
+            name = "courseName" 
+            placeholder="Angular BootCamp" 
+            [(ngModel)]="course.courseName"
+            required>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Starting Date</label>
+      <input type="date" 
+            class="form-control" 
+            id="startDate" 
+            name="startDate"
+            placeholder="DD/MM/YYYY" 
+            [(ngModel)]="course.startDate"
+            required>
+        <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
+          Please select a Starting Date.
+        </div>
+        <span class="badge">&nbsp;</span>
+    </div>
+    <div class="form-group">
+      <label for="duration">Duration</label>
+      <input type="number"
+            class="form-control" 
+            id="duration" 
+            [(ngModel)]="course.duration"
+            required>
+      <div [hidden]="duration.valid || duration.pristine" class="alert alert-danger">
+        Please select the course duration.
+      </div>
+      <div [hidden]="course.duration > 0" class="alert alert-danger">
+        Duration must be grather than 0.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="taughtBy">Taught By</label>
+      <div class="dropdown">
+        <select class="form-control" 
+              id="taughtBy"
+              name="taughtBy"
+              [(ngModel)]="course.taughtBy"
+              required>
+              <option *ngFor="let teacher of teachers" value="{{teacher.teacherId}}">{{teacher.teacherName}} {{teacher.teacherLastname}}</option>
+        </select>
+      </div>
+      <div [hidden]="taughtBy.valid || taughtBy.pristine" class="alert alert-danger">
+        Please select a teacher.
+      </div>
+    </div>
+    <button type="button" 
+        class="btn btn-primary"
+        (click) = "onSubmit(); courseForm.reset()"
+        [disabled]="!courseForm.form.valid">Save</button>
+    <button type="button" 
+        class="btn btn-default"
+        routerLink="/Courses">Cancel</button>
+  </form>
+</div>

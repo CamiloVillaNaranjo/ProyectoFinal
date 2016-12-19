@@ -21,11 +21,30 @@ export class TeacherComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((p: Params) =>
       this.teacherId = p['id:']);
+
     if (this.teacherId !== undefined) {
-      this.teacher = this.teacherService.getById(parseInt(this.teacherId));
+      debugger;
+      let id = parseInt(this.teacherId, 0);
+      this.teacherService.getById(id)
+            .subscribe((t: Teacher) => this.teacher = t);
     } else {
-      this.teacher = this.teacherService.getById(-1);
+      debugger;
+      this.teacher = new Teacher(null);
     }
+  }
+
+  onSubmit() {
+    if (this.teacherId === '-1') {
+      this.teacherService.addItem(this.teacher)
+          .subscribe(t => this.showMessage(t.teacherName + t.teacherLastname + 'successful created'));
+    } else {
+      this.teacherService.updateItem(this.teacher)
+          .subscribe(t => this.showMessage(t.teacherName + t.teacherLastname + 'successful updated'));
+    }
+  }
+
+  showMessage(message: string) {
+    alert('Teacher: ' + message);
   }
 
 }
