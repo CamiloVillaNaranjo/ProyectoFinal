@@ -1,6 +1,6 @@
 export class Course {
     constructor(
-        public courseId: number,
+        public id: number,
         public courseName = '',
         public startDate = '01/01/2017',
         public duration = 1,

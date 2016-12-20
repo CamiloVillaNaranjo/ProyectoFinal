@@ -29,7 +29,7 @@
           <td>
             <button (click)="remove(item)" class="btn btn-danger">x</button>
           </td>
-          <td> <a [routerLink]="['/Teachers',item.teacherId]">{{item.teacherName}}</a></td>
+          <td> <a [routerLink]="['/Teachers',item.id]">{{item.teacherName}}</a></td>
           <td>{{item.teacherLastname}}</td>
         </tr>
       </tbody>

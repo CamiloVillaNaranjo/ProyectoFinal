@@ -1,6 +1,6 @@
 export class Teacher {
     constructor(
-        public teacherId: number,
+        public id: number,
         public teacherName = '',
         public teacherLastname = ''
     ) {}

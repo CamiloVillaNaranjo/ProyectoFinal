@@ -31,8 +31,7 @@ export class CourseComponent implements OnInit {
       (teachers: Teacher[]) => this.teachers = teachers
       );
 
-    this.route.params.forEach((param: Params) =>
-      this.courseId = param['id:']);
+    this.route.params.forEach((param: Params) => this.courseId = param['id:']);
 
     if (this.courseId !== '-1') {
       let id = parseInt(this.courseId, 0);

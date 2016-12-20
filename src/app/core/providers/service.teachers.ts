@@ -35,7 +35,7 @@ export class TeacherService implements ICommonServiceBehavior {
     }
 
     updateItem(teacher: Teacher): Observable<Teacher> {
-        const url = `${this.urlService}/${teacher.teacherId}`;
+        const url = `${this.urlService}/${teacher.id}`;
         return this.http
                 .put(url, JSON.stringify(teacher), { headers: this.headers })
                 .map(() => teacher);

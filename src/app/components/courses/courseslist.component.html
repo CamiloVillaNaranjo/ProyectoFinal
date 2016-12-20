@@ -18,7 +18,7 @@
                 <mfDefaultSorter by="duration">Hours</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="startdate">Start Date</mfDefaultSorter>
+                <mfDefaultSorter by="startedDate">Start Date</mfDefaultSorter>
               </th>
             </tr>
             <tr>
@@ -33,10 +33,10 @@
             <td>
               <button (click)="remove(item)" class="btn btn-danger">x</button>
             </td>
-            <td><a [routerLink]="['/Courses', item.courseId]">{{item.courseName}}</a></td>
+            <td><a [routerLink]="['/Courses', item.id]">{{item.courseName}}</a></td>
             <td>{{item.duration}} h</td>
-            <td>{{item.startDate | date: "yyyy/MM/dd"}} 
-              <span class="badge" [ngStyle]="{background: validateDates(item.startDate)}">&nbsp;</span>
+            <td>{{item.startedDate | date: "dd/MM/yyyy"}} 
+              <span class="badge" [ngStyle]="{background: validateDates(item.startedDate)}">&nbsp;</span>
             </td>
           </tr>
         </tbody>

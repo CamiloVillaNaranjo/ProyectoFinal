@@ -9,17 +9,20 @@
             name = "courseName"
             [(ngModel)]="course.courseName"
             required #courseName="ngModel">
+      <div [hidden]="courseName.valid || courseName.pristine" class="alert alert-danger">
+          Please enter a Course Name.
+        </div>
     </div>
     <div class="form-group">
-      <label for="startDate">Starting Date</label>
-      <span class="badge" [ngStyle]="{background: validateDates(course.startDate)}" >&nbsp;</span>
-      <input type="date" 
+      <label for="startedDate">Starting Date</label>
+      <span class="badge" [ngStyle]="{background: validateDates(course.startedDate)}" >&nbsp;</span>
+      <input type="date"
             class="form-control" 
-            id="startDate" 
-            name="startDate"
-            [(ngModel)]="course.startDate"
-            required #startDate="ngModel">
-        <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
+            id="startedDate" 
+            name="startedDate"
+            [(ngModel)]="course.startedDate"
+            required #startedDate="ngModel">
+        <div [hidden]="startedDate.valid || startedDate.pristine" class="alert alert-danger">
           Please select a Starting Date.
         </div>
     </div>
@@ -28,6 +31,7 @@
       <input type="number"
             class="form-control" 
             id="duration" 
+            name="duration"
             [(ngModel)]="course.duration"
             required #duration="ngModel">
       <div [hidden]="duration.valid || duration.pristine" class="alert alert-danger">
@@ -45,7 +49,7 @@
               name="taughtBy"
               [(ngModel)]="course.taughtBy"
               required #taughtBy="ngModel">
-              <option *ngFor="let teacher of teachers" value="{{teacher.teacherId}}">{{teacher.teacherName}} {{teacher.teacherLastname}}</option>
+              <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.teacherName}} {{teacher.teacherLastname}}</option>
         </select>
       </div>
       <div [hidden]="taughtBy.valid || taughtBy.pristine" class="alert alert-danger">

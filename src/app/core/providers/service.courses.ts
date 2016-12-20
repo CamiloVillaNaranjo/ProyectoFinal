@@ -35,7 +35,7 @@ export class CourseService implements ICommonServiceBehavior{
     }
 
     updateItem(course: Course) {
-       const url = `${this.urlService}/${course.courseId}`;
+       const url = `${this.urlService}/${course.id}`;
         return this.http
                 .put(url, JSON.stringify(course), { headers: this.headers })
                 .map(() => course);
